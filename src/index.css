@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loader {
+    width: 25px;
+    height: 25px;
+    border: 5px solid #09c334;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+
+
+
+.looader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #059669;
+  box-sizing: border-box;
+  animation: flipX 1s linear infinite;
+  margin-top: 20%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+
+@keyframes flipX {
+  0% {
+    transform: perspective(200px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+
+
+.btn{
+    @apply text-white bg-emerald-600 px-[30px] py-2 rounded-lg text-nowrap text-center
+}
+/* .product .my-div 
+{
+    transition: transform 1s , opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.product:hover .my-div  
+{
+    opacity: 1;
+    transform: translateY(0%);
+
+} */
+
+.product{
+  position: relative;
+  overflow: hidden;
+}
+.wishlist{
+    position: absolute;
+    left: -100px;
+    top: 6px;
+    color: red;
+    transition: 0.8s ease all;
+    -webkit-transition: 0.8s ease all;
+    -moz-transition: 0.8s ease all;
+    -ms-transition: 0.8s ease all;
+    -o-transition: 0.8s ease all;
+}
+.product:hover .wishlist{
+    left: 15px;
+
+}
+
+
+.loaderr {
+      width: 10px;
+      height: 10px;
+      border:3px solid #FFF;
+      border-radius: 50%;
+      position: relative;
+      transform:rotate(45deg);
+      box-sizing: border-box;
+
+    }
+    .loaderr::before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      inset:-10px;
+      border-radius: 50%;
+      border:3px solid #059669;
+      animation: prixClipFix 2s infinite linear;
+      -webkit-animation: prixClipFix 2s infinite linear;
+}
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+      
