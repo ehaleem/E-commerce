@@ -18,7 +18,7 @@ import { Toaster } from 'react-hot-toast';
 import WishList from './Components/WishList/WishList';
 import WishListContextProvider from './Context/WishlistContext';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
-import ResetPassword from './Components/WishList/ResetPassword/ResetPassword';
+import ResetPassword from './Components/ResetPassword/ResetPassword';
 
 
 let query = new QueryClient
