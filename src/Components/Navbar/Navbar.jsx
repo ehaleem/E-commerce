@@ -55,7 +55,8 @@ export default function Navbar() {
 
 
           </ul>
-          <Link to="cart">
+          {
+            userLogin ? <><Link to="cart">
             <IconButton >
               <CartBadge badgeContent={cartNumber} color="success" overlap="circular">
                 <ShoppingCartIcon fontSize="small " sx={{
@@ -70,7 +71,10 @@ export default function Navbar() {
                 Color: "black"
               }} />
             </CartBadge>
-          </Link>
+          </Link></>:''
+
+          }
+          
         </div>
 
 
