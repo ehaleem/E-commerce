@@ -55,15 +55,13 @@ export default function Login() {
 
 
 
-
-
-
   return <>
-  <div className='flex items-center'>
-    <div className='w-1/2'>
-    <img className=' h-[530px]' src={signin} alt="" /></div>
+  <div className='flex items-center gap-4'>
+    <div className='w-1/2 hidden md:block'>
+    <img className=' h-[530px]' src={signin} alt="" />
+    </div>
   
-  <div className = "w-1/2">
+  <div className = "w-full md:w-1/2">
     {APIerorr?<h1 className='bg-red-400'>{APIerorr}</h1> :null}
   
     <h1 className=" font-extrabold text-2xl text-gray-700 my-4">Login Now</h1>

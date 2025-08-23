@@ -51,7 +51,8 @@ export default function Navbar() {
             {userLogin ? null : <li><Link to="login">Login</Link></li>}
             {userLogin ? null : <li><Link to="register">Register</Link></li>}
             {userLogin ? <li className='cursor-pointer' onClick={() => { sginOut() }}><span>SginOut</span></li> : null}
-            <li onClick={toggleMenu} className='md:hidden cursor-pointer' ><i className="text-emerald-600 text-xl fa-solid fa-bars"></i></li>
+            {userLogin ?<li onClick={toggleMenu} className='md:hidden cursor-pointer' ><i className="text-emerald-600 text-xl fa-solid fa-bars"></i></li>:''}
+           
 
 
           </ul>

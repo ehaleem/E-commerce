@@ -58,13 +58,13 @@ export default function Register() {
 
 
   return <>
-  <div className='flex items-center'>
+  <div className=' flex items-center mb-5 gap-4'>
 
-  <div className='w-1/2'>
+  <div className='w-1/2 hidden md:block'>
     <img className='w-full h-[530px]' src={signup} alt="" />
   </div>
 
-  <div className = "w-1/2 ">
+  <div className = "w-full md:w-1/2">
     {APIerorr?<h1 className='bg-red-400'>{APIerorr}</h1> :null}
   
     <h1 className=" font-extrabold text-2xl text-gray-700 my-4">Registeration</h1>
