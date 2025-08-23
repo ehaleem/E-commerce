@@ -19,6 +19,7 @@ import WishList from './Components/WishList/WishList';
 import WishListContextProvider from './Context/WishlistContext';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
+import Checkout from './Components/Checkout/Checkout';
 
 
 let query = new QueryClient
@@ -32,6 +33,7 @@ let routing = createBrowserRouter([
       { path: "resetpassword", element: <ResetPassword /> },
       { path: "products", element: <ProtectedRout>  <Products />  </ProtectedRout> },
       { path: "categories", element: <ProtectedRout>  <Categories />  </ProtectedRout> },
+      { path: "checkout", element: <ProtectedRout>  <Checkout />  </ProtectedRout> },
       { path: "productdetails/:id", element: <ProtectedRout>  <ProductDetails />  </ProtectedRout> },
       { path: "wishlist", element: <ProtectedRout>  <WishList />  </ProtectedRout> },
       { path: "brands", element: <ProtectedRout>  <Brands />  </ProtectedRout> },

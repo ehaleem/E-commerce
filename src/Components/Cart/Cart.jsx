@@ -5,6 +5,8 @@ import toast from 'react-hot-toast'
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import shopping from '../../assets/images/shopping.png'
+import { Link } from 'react-router-dom';
+
 export default function Cart() {
 
     const [product, setProduct] = useState([])
@@ -127,7 +129,26 @@ export default function Cart() {
                                         }
                                     }} variant="outlined" startIcon={<DeleteIcon />}>Delete All Product</Button>
                             </td>
-
+                        </tr>
+                        <tr >
+                           
+                            <td className='px-3' colSpan={5}>
+                                 <Link to ="/checkout">
+                                <Button 
+                                    sx={{
+                                        color: "#059669",
+                                        width: "100%",
+                                        marginBottom:"2%",
+                                        fontSize: "17px",
+                                        '&:hover': {
+                                            backgroundColor: "#059669",
+                                            color: 'white',
+                                            transition: '1s all'
+                                        }
+                                    }} variant="outlined">Checkout</Button></Link>
+                            </td>
+                            
+                            
                         </tr>
                     </tfoot>
                 </table>
