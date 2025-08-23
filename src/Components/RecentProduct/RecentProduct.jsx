@@ -73,7 +73,7 @@ export default function RecentProduct() {
 
       {
         recentProducts.length ? recentProducts.map((product) =>
-          <div className='product md:w-1/3 lg:w-1/4 p-5 rounded mb-[50px] hover:border-2  border-emerald-500' key={product.id}>
+          <div className='product md:w-1/3 lg:w-1/5 p-2 rounded mb-[50px] hover:border-2  border-emerald-500' key={product.id}>
             <div onClick={() => addProductToWishlist(product.id)} className='wishlist'>
               <FavoriteIcon sx={{
                 fontSize: "40px"
@@ -87,7 +87,7 @@ export default function RecentProduct() {
                 <div>
                   <img className='w-full' src={product.imageCover} alt="" />
                 </div>
-                <div className='my-5 py-3'>
+                <div className='my-1 py-2'>
                   <p className='text-sm text-emerald-600 text-left'>{product.category.name}</p>
                   <h4 className='font-semibold text-sm md:text-[15px] lg:text-xl text-left my-2'>{product.title.split(" ").slice(0, 2).join(" ")}</h4>
                   <div className='flex justify-between items-center'>

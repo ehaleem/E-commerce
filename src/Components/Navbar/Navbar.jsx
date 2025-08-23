@@ -12,8 +12,8 @@ import { WishListConrext } from '../../Context/WishlistContext';
 
 
 export default function Navbar() {
-  let {countWishlist ,setCountWishlist ,getWishList} =useContext(WishListConrext)
-  let { cartNumber , setCartNumber } = useContext(CartContext)
+  let { countWishlist, setCountWishlist } = useContext(WishListConrext)
+  let { cartNumber, setCartNumber } = useContext(CartContext)
 
   let navegat = useNavigate()
   function sginOut() {
@@ -37,16 +37,16 @@ export default function Navbar() {
 
   return <>
 
-    <nav className="bg-gray-200 px-5  border-gray-200 fixed top-0 left-0 right-0 z-40">
+    <nav className="bg-gray-200 md:px-5  border-gray-200 fixed top-0 left-0 right-0 z-40">
 
-      <div className={`max-w-screen-xl   p-3 md:p-0 flex flex-wrap items-center justify-around md:justify-between mx-auto ${userLogin === null ? `h-[55px]` : null}`}>
+      <div className={`max-w-screen-xl px-1  py-3 md:p-0 flex flex-wrap items-center justify-around md:justify-between mx-auto ${userLogin === null ? `h-[55px]` : null}`}>
 
-        <a href="" className="flex items-center space-x-3  rtl:space-x-reverse">
+        <a href="/" className="flex items-center space-x-3  rtl:space-x-reverse">
           <img src={logo} className="md:h-8 w-[120px]" alt="Flowbite Logo" />
         </a>
 
 
-        <div className=" items-center gap-4 flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className=" items-center gap-1 md:gap-4 flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <ul className='flex  gap-4 order-1'>
             {userLogin ? null : <li><Link to="login">Login</Link></li>}
             {userLogin ? null : <li><Link to="register">Register</Link></li>}

@@ -6,39 +6,40 @@ import { CartContext } from '../../Context/CartContext';
 import toast from 'react-hot-toast';
 
 export default function ProductDetails() {
-  
 
-  let{ addToCart ,cartNumber ,setCartNumber  }= useContext(CartContext)
+
+  let { addToCart, cartNumber, setCartNumber } = useContext(CartContext)
   async function addProductCart(id) {
- 
+
     let respons = await addToCart(id)
     console.log(respons.data.status);
 
-    if (respons.data.status==='success'){
-       toast.success(respons.data.message)
-       setCartNumber(cartNumber+1)}
+    if (respons.data.status === 'success') {
+      toast.success(respons.data.message)
+      setCartNumber(cartNumber + 1)
+    }
     else {
-  toast.error(respons.data.message)
+      toast.error(respons.data.message)
+    }
+
   }
-  
-}
-    const [AllCategoryName, setAllCategoryName] = useState([])
-  async function getRelatedProducts(){
-    try{
-      let {data} = await axios.get("https://ecommerce.routemisr.com/api/v1/products")
+  const [AllCategoryName, setAllCategoryName] = useState([])
+  async function getRelatedProducts() {
+    try {
+      let { data } = await axios.get("https://ecommerce.routemisr.com/api/v1/products")
       setAllCategoryName(data.data)
     }
-    catch(erorr){
+    catch (erorr) {
       console.log(erorr);
-      
+
     }
   }
 
   const [product, setProduct] = useState(null)
   let { id } = useParams()
 
-  
-    var settings = {
+
+  var settings = {
     dots: true,
     infinite: true,
     speed: 300,
@@ -65,20 +66,20 @@ export default function ProductDetails() {
 
   // }, [id])
   useEffect(() => {
-  async function fetchProductData() {
-    await getSpecificProduct(id);
-    getRelatedProducts();  
-  }
+    async function fetchProductData() {
+      await getSpecificProduct(id);
+      getRelatedProducts();
+    }
 
-  fetchProductData();
-}, [id]);
+    fetchProductData();
+  }, [id]);
 
   return <>
-    <div className='flex flex-wrap p-5 items-center'>
-      <div className='w-full md:w-1/4 mb-6 md:mb-0'>
-      <Slider {...settings}>
-        {product?.images.map((src)=> <img src={src}/>)}
-      </Slider>
+    <div className='flex flex-wrap p-2 items-center'>
+      <div className='w-full md:w-1/5 mb-6 md:mb-0'>
+        <Slider {...settings}>
+          {product?.images.map((src) => <img src={src} />)}
+        </Slider>
 
       </div>
       <div className="w-full md:w-3/4 px-8">
@@ -89,49 +90,49 @@ export default function ProductDetails() {
           <p className='text-left my-4 text-gray-900'>{product?.price} EGP</p>
           <span className='text-left my-4 text-gray-600'>{product?.ratingsAverage} <i className='fas fa-star text-orange-600'></i></span>
         </div>
-        <button onClick={()=>{addProductCart(id)}} className='btn w-full'> Add To Cart</button>
+        <button onClick={() => { addProductCart(id) }} className='btn w-full'> Add To Cart</button>
       </div>
     </div>
-    
-<div className='flex flex-wrap'>
-  {
-    AllCategoryName
-      .filter(reproduct => reproduct.category.name === product?.category.name)
-      .map(reproduct => (
-        <div
-          className='product md:w-1/4 lg:w-1/5 p-5 rounded mb-[50px] hover:border-2 border-emerald-500'
-          key={reproduct.id}
-        >
-          <Link to={`/productdetails/${reproduct.id}`}>
-            <img className='w-full' src={reproduct.imageCover} alt="" />
-            <div className='my-5 py-3'>
-              <p className='text-sm text-emerald-600 text-left'>
-                {reproduct.category.name}
-              </p>
-              <h4 className='font-semibold text-xl text-left my-2'>
-                {reproduct.title.split(" ").slice(0, 2).join(" ")}
-              </h4>
-              <div className='flex justify-between items-center'>
-                <span>{reproduct.price} EGP</span>
-                <div className='flex gap-1 items-center'>
-                  <span>{reproduct.ratingsAverage}</span>
-                  <i className='text-orange-500 fas fa-star'></i>
+
+    <div className='flex flex-wrap'>
+      {
+        AllCategoryName
+          .filter(reproduct => reproduct.category.name === product?.category.name)
+          .map(reproduct => (
+            <div
+              className='product md:w-1/4 lg:w-1/5 p-5 rounded mb-[50px] hover:border-2 border-emerald-500'
+              key={reproduct.id}
+            >
+              <Link to={`/productdetails/${reproduct.id}`}>
+                <img className='w-full' src={reproduct.imageCover} alt="" />
+                <div className='my-1 py-2'>
+                  <p className='text-sm text-emerald-600 text-left'>
+                    {reproduct.category.name}
+                  </p>
+                  <h4 className='font-semibold text-xl text-left my-2'>
+                    {reproduct.title.split(" ").slice(0, 2).join(" ")}
+                  </h4>
+                  <div className='flex justify-between items-center'>
+                    <span>{reproduct.price} EGP</span>
+                    <div className='flex gap-1 items-center'>
+                      <span>{reproduct.ratingsAverage}</span>
+                      <i className='text-orange-500 fas fa-star'></i>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </Link>
+              <button onClick={() => { addProductCart(id) }} className='btn mt-2 w-full'>Add To Cart</button>
             </div>
-          </Link>
-          <button onClick={()=>{addProductCart(id)}} className='btn mt-2 w-full'>Add To Cart</button>
-        </div>
-      ))
-  }
-</div>
+          ))
+      }
+    </div>
 
 
 
 
 
 
-    
+
     {/* <div className='flex flex-wrap'>
       {
         AllCategoryName.map((product) =>
