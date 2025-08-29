@@ -22,9 +22,7 @@ export default function WishList() {
 
     }
 
-    function deletAllWishlist() {
-        setWishlistProducts(0)
-    }
+
 
     useEffect(() => { getProductToWishlist() }, [])
 
