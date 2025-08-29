@@ -100,8 +100,8 @@ export default function RecentProduct() {
                 </div>
               </div>
             </Link>
-            <div className='flex items-center justify-between my-div'>
-              <button onClick={() => { addProductCart(product.id) }} className='btn w-3/4 text-sm md:text-[13px] lg:text-[16px]'>
+            <div className='flex items-center justify-evenly my-div'>
+              <button onClick={() => { addProductCart(product.id) }} className='flex items-center justify-center btn w-3/4 text-sm md:text-[14px] lg:text-[15px]'>
                 {loding && currntID == product.id ? <i className='fas fa-spinner fa-spin'></i> : "+Add To Cart"}
               </button>
 

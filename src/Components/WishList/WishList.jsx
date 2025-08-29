@@ -77,28 +77,8 @@ export default function WishList() {
                                 </tr>
                             ))}
                         </tbody>
-                        <tfoot >
-                            <tr >
-                                <td onClick={() => deletAllWishlist()} className='px-3' colSpan={5}>
-                                    <Button
-                                        sx={{
-                                            color: "#059669",
-                                            width: "100%",
-                                            marginBlock: "2%",
-                                            fontSize: "17px",
-                                            '&:hover': {
-                                                backgroundColor: "#059669",
-                                                color: 'white',
-                                                transition: '1s all'
-                                            }
-                                        }} variant="outlined" startIcon={<DeleteIcon />}>Delete All Product</Button>
-                                </td>
-
-                            </tr>
-
-                        </tfoot>
                     </table>
-                </div> : <div className='flex items-center justify-center'> <span className="looadercart"></span> </div>
+                </div>:''
         }
     </>
 

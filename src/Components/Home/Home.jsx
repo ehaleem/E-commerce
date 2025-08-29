@@ -18,7 +18,7 @@ getWishList()
     },[])
   return <>
       <MainSlider/>
-      <CategoriseSlider/>
+      < CategoriseSlider/>
       <RecentProduct/>
     </>
   

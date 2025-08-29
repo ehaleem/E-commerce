@@ -36,15 +36,17 @@ export default function CategoriseSlider() {
 
 
   return <>
-  <h3 className='my-3 text-left text-2xl capitalize' >shop popular categoris</h3>
+  <div className=' hidden md:block'>
+    <h3 className='my-3 text-left text-2xl capitalize sm:hidden' >shop popular categoris</h3>
     <Slider {...settings}>
 
-      {categorise.map((category) => <div>
+      {categorise.map((category) => <div >
         <img className='w-full object-cover h-[250px]' src={category.image} alt="" />
         <h5>{category.name}</h5>
       </div>)}
     </Slider>
 
+  </div>
   </>
 
 }

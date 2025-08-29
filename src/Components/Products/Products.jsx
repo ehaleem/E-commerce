@@ -84,13 +84,13 @@ export default function Products() {
                 </div>
               </div>
             </Link>
-            <div className='flex items-center justify-between my-div'>
-              <button onClick={() => { addProductCart(product.id) }} className='btn w-3/4'>Add To Cart </button>
-              <div className='w-1/4'>
+            <div className='flex items-center justify-evenly my-div'>
+              <button onClick={() => { addProductCart(product.id) }} className='flex items-center justify-center btn w-3/4 text-sm md:text-[14px] lg:text-[15px]'>Add To Cart </button>
+              
                 {
                   wishlistID.map((wid) => wid.id === product.id ? <div onClick={() => (deletItemFromWishlist(product.id))} > <FavoriteIcon className='text-red-700 cursor-pointer' /></div> : null)
                 }
-              </div>
+              
             </div>
 
           </div>) : <span className="looader"></span>}
