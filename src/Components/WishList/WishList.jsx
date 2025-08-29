@@ -33,7 +33,7 @@ export default function WishList() {
         {
             wishlistProducts.length === 0 ?
                 <div className=' flex items-center justify-center'><img className='w-[350px]' src={wishlist} alt="" /></div> :
-                wishlistProducts.length > 0 ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                wishlistProducts.length > 0 ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
                     <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>

@@ -18,11 +18,11 @@ export default function Brands() {
   const categories = query?.data?.data?.data
   return <>
 
-    <div className="flex flex-wrap ">
+    <div className="flex flex-wrap justify-center">
       {
         categories ?
           categories.map((categoty) =>
-            <div className="w-1/4  p-2  my-3   ">
+            <div className="w-1/2 md:w-1/4 lg:w-1/5  p-2  my-3   ">
               <div className="border border-gray-900 p-3">
                 <div>
                 <img className='w-full' src={categoty.image} />

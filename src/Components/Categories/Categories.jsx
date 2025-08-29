@@ -23,7 +23,7 @@ export default function Categories() {
       {
         categories ?
           categories.map((categoty) =>
-            <div className="w-1/4  p-3 my-3">
+            <div className=" md:w-1/3 lg:w-1/4 p-3 my-3">
               <div className='mb-3'>
                 <img className='w-full h-[400px]' src={categoty.image} />
               </div>

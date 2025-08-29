@@ -49,7 +49,7 @@ export default function Cart() {
         <h1 className="text-3xl font-bold mb-8 text-gray-800">Your Shopping Cart</h1>
 
         {product.length === 0 ? <div className=' flex items-center justify-center'><img className='w-[350px]' src={shopping} alt="" /></div> :
-            product.length > 0 ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            product.length > 0 ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
