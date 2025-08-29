@@ -16,14 +16,13 @@ export default function Navbar() {
   let { cartNumber, setCartNumber } = useContext(CartContext)
 
   let navegat = useNavigate()
-  function sginOut() {
-    setUserLogin(null)
+  function signOut() {
+    logout()
     setCountWishlist(0)
     setCartNumber(0)
-    localStorage.removeItem("userToken")
     navegat("login")
   }
-  let { userLogin, setUserLogin } = useContext(UserContext)
+  let { userLogin, logout } = useContext(UserContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -50,32 +49,32 @@ export default function Navbar() {
           <ul className='flex  gap-4 order-1'>
             {userLogin ? null : <li><Link to="login">Login</Link></li>}
             {userLogin ? null : <li><Link to="register">Register</Link></li>}
-            {userLogin ? <li className='cursor-pointer' onClick={() => { sginOut() }}><span>SginOut</span></li> : null}
-            {userLogin ?<li onClick={toggleMenu} className='md:hidden cursor-pointer' ><i className="text-emerald-600 text-xl fa-solid fa-bars"></i></li>:''}
-           
+            {userLogin ? <li className='cursor-pointer' onClick={() => { signOut() }}><span>SignOut</span></li> : null}
+            {userLogin ? <li onClick={toggleMenu} className='md:hidden cursor-pointer' ><i className="text-emerald-600 text-xl fa-solid fa-bars"></i></li> : ''}
+
 
 
           </ul>
           {
             userLogin ? <><Link to="cart">
-            <IconButton >
-              <CartBadge badgeContent={cartNumber} color="success" overlap="circular">
-                <ShoppingCartIcon fontSize="small " sx={{
-                  color: "black"
-                }} />
-              </CartBadge>
-            </IconButton>
-          </Link>
-          <Link to="wishlist">
-            <CartBadge badgeContent={countWishlist} color='success' overlap="circular">
-              <FavoriteIcon sx={{
-                Color: "black"
-              }} />
-            </CartBadge>
-          </Link></>:''
+              <IconButton >
+                <CartBadge badgeContent={cartNumber} color="success" overlap="circular">
+                  <ShoppingCartIcon fontSize="small " sx={{
+                    color: "black"
+                  }} />
+                </CartBadge>
+              </IconButton>
+            </Link>
+              <Link to="wishlist">
+                <CartBadge badgeContent={countWishlist} color='success' overlap="circular">
+                  <FavoriteIcon sx={{
+                    Color: "black"
+                  }} />
+                </CartBadge>
+              </Link></> : ''
 
           }
-          
+
         </div>
 
 

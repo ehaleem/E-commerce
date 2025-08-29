@@ -22,7 +22,7 @@ import ResetPassword from './Components/ResetPassword/ResetPassword';
 import Checkout from './Components/Checkout/Checkout';
 
 
-let query = new QueryClient
+let query = new QueryClient()
 
 let routing = createBrowserRouter([
   {

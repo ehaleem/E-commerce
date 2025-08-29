@@ -7,7 +7,12 @@ export default function UserContextProvider(props){
     const [userLogin, setUserLogin] = useState(
         localStorage.getItem("userToken") ? localStorage.getItem("userToken"):null
     )
-    return <UserContext.Provider value={  {userLogin,setUserLogin}  }>
+    function logout() {
+  localStorage.removeItem("userToken")
+  setUserLogin(null)
+}
+
+    return <UserContext.Provider value={  {userLogin,setUserLogin,logout}  }>
         {props.children}
     </UserContext.Provider>
 }

@@ -32,7 +32,7 @@ export default function CategoriseSlider() {
 
   useEffect(() => {
     getCategoriseSlider()
-  })
+  },[])
 
 
   return <>

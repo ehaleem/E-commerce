@@ -9,7 +9,7 @@ import signup from '../../assets/images/Sign up.svg'
 
 
 export default function Register() {
-  let { userLogin, setUserLogin } = useContext(UserContext)
+  let {  setUserLogin } = useContext(UserContext)
   const [APIerorr, setAPIerorr] = useState("")
   const [isLoding, setIsLoding] = useState(false)
   let navigate = useNavigate()

@@ -10,8 +10,10 @@ export default function Categories() {
   }
 
   let query = useQuery({
-    queryKey: ['categories'],
-    queryFn: getCategories
+   queryKey: ['categories'],
+  queryFn: getCategories,
+
+  
   })
   console.log(query?.data?.data?.data);
   const categories = query?.data?.data?.data
