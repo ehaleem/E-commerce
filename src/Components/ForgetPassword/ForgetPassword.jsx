@@ -29,11 +29,11 @@ export default function ForgetPassword() {
   }
   return <>
   <div className="flex items-center bg-gray-50">
-    <div className="w-1/2">
+    <div className="w-1/2 hidden md:block">
       <img className='h-[530px]' src={forget}   alt="" />
     </div>
   
-    <div className="w-1/2 flex items-center justify-center  p-4 min-h-screen">
+    <div className=" w-full md:w-1/2 flex items-center justify-center  p-4 min-h-screen">
       <form className="w-full max-w-md bg-white rounded-2xl shadow-md p-6 space-y-4"
       onSubmit={(e) => e.preventDefault()}>
         <h2 className="text-center text-2xl font-semibold">Forgot Password</h2>

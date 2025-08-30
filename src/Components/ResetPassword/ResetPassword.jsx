@@ -21,10 +21,10 @@ export default function ResetPassword() {
   return (
 
     <div className="py-10 flex  items-center bg-gray-50">
-      <div className="w-1/2">
-        <img src={res} className="w-1/2" alt="" />
+      <div className="w-1/2 hidden md:block">
+        <img src={res} className='' alt="" />
       </div>
-      <div className="flex justify-center items-center mt-5 w-full">
+      <div className="flex justify-center items-center mt-5 w-full md:w-1/2">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="bg-white px-6 py-12 rounded-lg shadow-md w-full max-w-sm"
