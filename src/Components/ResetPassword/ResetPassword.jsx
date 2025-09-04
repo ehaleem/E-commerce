@@ -22,7 +22,7 @@ export default function ResetPassword() {
 
     <div className="py-10 flex  items-center bg-gray-50">
       <div className="w-1/2 hidden md:block">
-        <img src={res} className='' alt="" />
+        <img src={res}  alt="" />
       </div>
       <div className="flex justify-center items-center mt-5 w-full md:w-1/2">
         <form
