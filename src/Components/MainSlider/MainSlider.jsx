@@ -21,7 +21,7 @@ export default function MainSlider() {
   return <>
       
        <div className='flex my-9'>
-          <div className="w-3/4">
+          <div className="w-full md:w-3/4">
           <Slider {...settings}>
             <img  className="w-full h-[440px] object-cover " src={slide3} alt="" />
             <img  className="w-full h-[440px] object-cover " src={slide4} alt="" />
@@ -29,7 +29,7 @@ export default function MainSlider() {
           </Slider>
             
           </div>
-          <div className="w-1/4 ">
+          <div className="hidden md:block md:w-1/4 ">
             <img className="w-full h-[220px] object-cover"  src={slide1} alt="" />
             <img  className="w-full h-[220px] object-cover " src={slide2} alt="" />
             

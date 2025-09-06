@@ -37,7 +37,17 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+.looaderhome{
+   width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  background: #059669;
+  box-sizing: border-box;
+  animation: flipX 1s linear infinite;
+  margin-top: 20%;
 
+}
 .looader {
   width: 48px;
   height: 48px;
