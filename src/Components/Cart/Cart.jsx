@@ -9,11 +9,14 @@ import { Link } from 'react-router-dom';
 
 export default function Cart() {
 
+    const [isLoding, setIsLoding] = useState(false)
     const [product, setProduct] = useState([])
     let { getProduct, updataCountProduct, deletProduct, deletAllProduct, cartNumber, setCartNumber } = useContext(CartContext)
     async function getCartProduct() {
+        setIsLoding(true)
         let respons = await getProduct()
         setProduct(respons.data.data.products)
+        setIsLoding(false)
     }
 
     async function updata(productID, newCount) {
@@ -38,13 +41,15 @@ export default function Cart() {
         let respons = await deletAllProduct()
         console.log(respons);
 
-        setProduct(respons.data)
+        setProduct([])
+        setCartNumber(0)
         toast.success("deleted all product")
     }
     useEffect(() => {
         getCartProduct()
     }, [])
 
+    if(isLoding)return  <div className='flex items-center justify-center'> <span className="looadercart"></span> </div>
     return <>
         <h1 className="text-3xl font-bold mb-8 text-gray-800">Your Shopping Cart</h1>
 

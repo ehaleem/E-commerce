@@ -6,13 +6,16 @@ import toast from 'react-hot-toast';
 import wishlist from '../../assets/images/wishlist.png'
 
 export default function WishList() {
+    const [isloding, setIsloding] = useState(false)
     const [wishlistProducts, setWishlistProducts] = useState([])
     let { getWishList, deletfromWishlist } = useContext(WishListConrext)
 
     async function getProductToWishlist() {
+        setIsloding(true)
         let respons = await getWishList()
         console.log(respons.data.data);
         setWishlistProducts(respons.data.data)
+         setIsloding(false)
     }
     async function deletProduct(id) {
         let respons = await deletfromWishlist(id)
@@ -26,6 +29,7 @@ export default function WishList() {
 
     useEffect(() => { getProductToWishlist() }, [])
 
+    if(isloding) return  <div className='flex items-center justify-center'> <span className="looadercart"></span> </div>
     return <>
         <h1 className="text-3xl font-bold mb-8 text-gray-800">Your Shopping Wishlist</h1>
         {
