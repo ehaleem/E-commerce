@@ -15,7 +15,7 @@ export default function WishList() {
         let respons = await getWishList()
         console.log(respons.data.data);
         setWishlistProducts(respons.data.data)
-         setIsloding(false)
+        setIsloding(false)
     }
     async function deletProduct(id) {
         let respons = await deletfromWishlist(id)
@@ -29,13 +29,14 @@ export default function WishList() {
 
     useEffect(() => { getProductToWishlist() }, [])
 
-    if(isloding) return  <div className='flex items-center justify-center'> <span className="looadercart"></span> </div>
+    if (isloding)
+        return <div className='flex items-center justify-center'> <span className="looadercart"></span> </div>
     return <>
         <h1 className="text-3xl font-bold mb-8 text-gray-800">Your Shopping Wishlist</h1>
         {
             wishlistProducts.length === 0 ?
                 <div className=' flex items-center justify-center'><img className='w-[350px]' src={wishlist} alt="" /></div> :
-                wishlistProducts.length > 0 ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
                     <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
@@ -80,7 +81,7 @@ export default function WishList() {
                             ))}
                         </tbody>
                     </table>
-                </div>:''
+                </div>
         }
     </>
 
